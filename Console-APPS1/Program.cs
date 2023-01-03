@@ -30,6 +30,8 @@ namespace MyNamespace
 
         public static bool IsAllDigits(string raw)
         {
+            bool isDigit = true;
+
             if( string.IsNullOrEmpty(raw)) return false;
 
             foreach( char c in raw ) 
@@ -38,10 +40,10 @@ namespace MyNamespace
                 {
                     Console.WriteLine("{0}, is not a digit.", c);
 
-                    return false;
+                    isDigit = false;
                 }
             }
-            return true;
+            return isDigit;
         }
       
     }
