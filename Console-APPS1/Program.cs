@@ -24,6 +24,7 @@ namespace MyNamespace
                 // int n = Int32.Parse(s);
                 Console.WriteLine("2 * {0} = {1}", n, 2*n);
             }
+
             Console.WriteLine("Press [Enter] for " +
                 "finishing the app...");
             Console.Read();
@@ -36,15 +37,24 @@ namespace MyNamespace
 
             if( string.IsNullOrEmpty(raw)) return false;
 
-            foreach( char c in raw ) 
-            {
-                if( !char.IsDigit(c) )
-                {
-                    Console.WriteLine("{0}, is not a digit.", c);
+            // foreach( char c in raw ) 
+            // {
+            //     if( !char.IsDigit(c) )
+            //     {
+            //         Console.WriteLine("{0}, is not a digit.", c);
 
+            //         isDigit = false;
+            //     }
+            // }
+
+            for(int index = 0; index < raw.Length; index++)
+            {
+                if (Char.IsDigit(raw[index]) == false)
+                {
                     isDigit = false;
                 }
             }
+
             return isDigit;
         }
       
