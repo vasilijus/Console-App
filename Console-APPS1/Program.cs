@@ -1,6 +1,7 @@
-﻿namespace ParseSequenceWithSplit
+﻿using System;
+
+namespace ParseSequenceWithSplit
 {
-using System;
     
     class Program
     {
@@ -15,6 +16,8 @@ using System;
             string[] segments = input.Split(dividers);
 
             int sum = 0;
+            
+            string singleLine = string.Empty;
             foreach( string s in segments ) 
             {
                 if (s.Length > 0)
@@ -33,6 +36,10 @@ using System;
                 }
                 // Console.WriteLine(s);
             }
+                singleLine = string.Join(":", segments);
+                Console.WriteLine("Sum is: {0} , the elements in array were: {1}", sum, singleLine);
+                Console.WriteLine("For finishing the application press [Enter]");
+                Console.ReadLine();
         }
 
         public static bool IsAllDigits(string raw)
