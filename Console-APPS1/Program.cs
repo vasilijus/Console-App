@@ -1,5 +1,5 @@
 ﻿using System;
-using AlignOutput;
+using UsefullFunctions;
 using System.Collections.Generic;
 // AlignOutput - viravnivanie mnozestvo strok, dlia uludshenia vneshnego vida v output
 // Some of the things that want to practice: 

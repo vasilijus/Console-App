@@ -4,7 +4,7 @@ using System.Collections.Generic;
 // AlignOutput - viravnivanie mnozestvo strok, dlia uludshenia vneshnego vida v output
 // Some of the things that want to practice: 
 // Trim(), Pad(), PadRight(), PadLeft(), String() и Concat()
-namespace AlignOutput
+namespace UsefullFunctions
 {
     public class Formatter
     {
