@@ -1,5 +1,5 @@
 ﻿using System;
-
+using AlignOutput;
 using System.Collections.Generic;
 // AlignOutput - viravnivanie mnozestvo strok, dlia uludshenia vneshnego vida v output
 // Some of the things that want to practice: 
@@ -53,37 +53,17 @@ namespace AlignOutput
                 Console.WriteLine("Name: '{0}', after formattign.", name);
             }
 
-            removeWhiteSpaces(" this is a\nstring");
+            // removeWhiteSpaces(" this is a\nstring");
+
+            Formatter formt = new Formatter();
+            // formt.RemoveWhiteSpaces(" this is a\nstring");
+            Formatter.RemoveWhiteSpaces(" this is a\nstring");
 
             Console.WriteLine("Press [Enter] to quit.");
             Console.ReadLine();
         }
 
-        public static void removeWhiteSpaces(string raw)
-        {
-            Console.WriteLine("Removeing white Spaces from: ' this is a\nstring'");
-            char[] whiteSpace = { ' ', '\n', '\t' };
-            string s = raw;
-            for (; ; ) // infinite loop
-            {
-                int offset = s.IndexOfAny(whiteSpace);
-
-                if (offset == -1)
-                {
-                    break;
-                }
-
-                string before = s.Substring(0, offset);
-                string after = s.Substring(offset + 1);
-                Console.WriteLine("B: '{0}', A: '{1}'", before, after);
-
-                s = String.Concat(before, after);
-            }
-
-            Console.WriteLine("After Spaces removed: '{0}'", s);
-
-        }
-
+       
 
     }
 }
