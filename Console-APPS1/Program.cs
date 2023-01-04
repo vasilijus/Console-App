@@ -52,8 +52,32 @@ namespace AlignOutput
             {
                 Console.WriteLine("Name: '{0}', after formattign.", name);
             }
+
+            Console.WriteLine("Removeing white Spaces from: ' this is a\nstring'");
+            char[] whiteSpace = {' ', '\n', '\t' };
+            string s = " this is a\nstring";
+            for (;;) // infinite loop
+            {
+                int offset = s.IndexOfAny(whiteSpace);
+
+                if(offset == -1)
+                {
+                    break;
+                }
+
+                string before = s.Substring(0, offset);
+                string after = s.Substring(offset + 1);
+                Console.WriteLine("B: '{0}', A: '{1}'", before, after);
+
+                s = String.Concat(before, after);
+            }
+
+            Console.WriteLine("After Spaces removed: '{0}'", s);
+            
             Console.WriteLine("Press [Enter] to quit.");
             Console.ReadLine();
         }
+
+        
     }
 }
