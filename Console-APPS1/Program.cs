@@ -26,10 +26,10 @@ namespace AlignOutput
             List<string> namesToAlign = new List<string>();
             for (int index = 0; index < listStringNames.Count; index++)
             {
-                string trimedName = listStringNames[index].Trim(); 
+                string trimedName = listStringNames[index].Trim();
                 namesToAlign.Add(trimedName);
             }
-            
+
             // Get the longest name length (int)
             int maxLength = 0;
             foreach (string name in namesToAlign)
@@ -44,7 +44,7 @@ namespace AlignOutput
             // Vyravnivaem vse stroki k max dline
             for (int i = 0; i < namesToAlign.Count; i++)
             {
-                namesToAlign[i] = namesToAlign[i].PadRight(maxLength+1);
+                namesToAlign[i] = namesToAlign[i].PadRight(maxLength + 1);
             }
 
             // Show formatted strings
@@ -53,14 +53,22 @@ namespace AlignOutput
                 Console.WriteLine("Name: '{0}', after formattign.", name);
             }
 
+            removeWhiteSpaces(" this is a\nstring");
+
+            Console.WriteLine("Press [Enter] to quit.");
+            Console.ReadLine();
+        }
+
+        public static void removeWhiteSpaces(string raw)
+        {
             Console.WriteLine("Removeing white Spaces from: ' this is a\nstring'");
-            char[] whiteSpace = {' ', '\n', '\t' };
-            string s = " this is a\nstring";
-            for (;;) // infinite loop
+            char[] whiteSpace = { ' ', '\n', '\t' };
+            string s = raw;
+            for (; ; ) // infinite loop
             {
                 int offset = s.IndexOfAny(whiteSpace);
 
-                if(offset == -1)
+                if (offset == -1)
                 {
                     break;
                 }
@@ -73,11 +81,9 @@ namespace AlignOutput
             }
 
             Console.WriteLine("After Spaces removed: '{0}'", s);
-            
-            Console.WriteLine("Press [Enter] to quit.");
-            Console.ReadLine();
+
         }
 
-        
+
     }
 }
