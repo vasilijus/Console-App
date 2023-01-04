@@ -52,6 +52,8 @@ namespace AlignOutput
             {
                 Console.WriteLine("Name: '{0}', after formattign.", name);
             }
+            Console.WriteLine("Press [Enter] to quit.");
+            Console.ReadLine();
         }
     }
 }
