@@ -19,11 +19,38 @@ using System;
             {
                 if (s.Length > 0)
                 {
+                    if (IsAllDigits(s))
+                    {
+                        int num = 0;
+                        if (Int32.TryParse(s, out num))
+                        {
+                            Console.WriteLine("Another integer: {0}", num);
 
+                            sum += num;
+                        }
+                        // In case of failure to Parse, moves to another segment
+                    }
                 }
-                Console.WriteLine(s);
+                // Console.WriteLine(s);
             }
         }
 
+        public static bool IsAllDigits(string raw)
+        {
+            bool isDigit = true;
+
+            if( string.IsNullOrEmpty(raw)) return false;
+
+            for(int index = 0; index < raw.Length; index++)
+            {
+                if (Char.IsDigit(raw[index]) == false)
+                {
+                    isDigit = false;
+                }
+            }
+
+            return isDigit;
+        }
     }
+    
 }
