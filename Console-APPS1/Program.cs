@@ -57,7 +57,10 @@ namespace AlignOutput
             // From WorkingWithStrings
             UsefullFunctions.Formatter.RemoveWhiteSpaces(" this is a\nstring");
             
-            UsefullFunctions.DisplayUnicodeChars.Show();
+            // UsefullFunctions.DisplayUnicodeChars.Show();
+
+            UsefullTime.TimeWorks.IsYearLeapYear(2021);
+            UsefullTime.TimeWorks.WorkingWithDate();
 
             Console.WriteLine("Press [Enter] to quit.");
             Console.ReadLine();
