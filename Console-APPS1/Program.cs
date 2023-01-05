@@ -56,6 +56,8 @@ namespace AlignOutput
 
             // From WorkingWithStrings
             UsefullFunctions.Formatter.RemoveWhiteSpaces(" this is a\nstring");
+            
+            UsefullFunctions.DisplayUnicodeChars.Show();
 
             Console.WriteLine("Press [Enter] to quit.");
             Console.ReadLine();
