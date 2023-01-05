@@ -1,5 +1,5 @@
 ﻿using System;
-using UsefullFunctions;
+// using UsefullFunctions;
 using System.Collections.Generic;
 // AlignOutput - viravnivanie mnozestvo strok, dlia uludshenia vneshnego vida v output
 // Some of the things that want to practice: 
@@ -17,6 +17,7 @@ namespace AlignOutput
                                                             "Lorez"};
             // Display Names
             Console.WriteLine("Sledushie imena imejut raznily dliny:");
+            
             foreach (string name in listStringNames)
             {
                 Console.WriteLine("Name: '{0}' before change", name);
@@ -53,11 +54,8 @@ namespace AlignOutput
                 Console.WriteLine("Name: '{0}', after formattign.", name);
             }
 
-            // removeWhiteSpaces(" this is a\nstring");
-
-            Formatter formt = new Formatter();
-            // formt.RemoveWhiteSpaces(" this is a\nstring");
-            Formatter.RemoveWhiteSpaces(" this is a\nstring");
+            // From WorkingWithStrings
+            UsefullFunctions.Formatter.RemoveWhiteSpaces(" this is a\nstring");
 
             Console.WriteLine("Press [Enter] to quit.");
             Console.ReadLine();
