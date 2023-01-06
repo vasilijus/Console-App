@@ -8,61 +8,41 @@ namespace AlignOutput
 {
     class Program
     {
+        Program()
+        {
+            Console.WriteLine("Starting Program. \nNo arguments were passed.\nInit...");
+            this.init();
+        }
+
+        Program(string args)
+        {
+            Console.WriteLine("Received: {0}", args);
+        }
+        
         public static void Main(string[] args)
         {
-            List<string> listStringNames = new List<string> {" Sergio",
-                                                            "Michael  ",
-                                                            " Juango",
-                                                            "Ewona ",
-                                                            "Lorez"};
-            // Display Names
-            Console.WriteLine("Sledushie imena imejut raznily dliny:");
-            
-            foreach (string name in listStringNames)
+            if (args.Length > 0)
             {
-                Console.WriteLine("Name: '{0}' before change", name);
+                Program p = new Program(args[0]);
             }
-            Console.WriteLine();
-
-            List<string> namesToAlign = new List<string>();
-            for (int index = 0; index < listStringNames.Count; index++)
-            {
-                string trimedName = listStringNames[index].Trim();
-                namesToAlign.Add(trimedName);
+            else {
+                Program p = new Program();
             }
 
-            // Get the longest name length (int)
-            int maxLength = 0;
-            foreach (string name in namesToAlign)
-            {
-                if (name.Length > maxLength)
-                {
-                    maxLength = name.Length;
-                }
-            }
-            Console.WriteLine("Longest name is '{0}' letters.", maxLength);
+        }
 
-            // Vyravnivaem vse stroki k max dline
-            for (int i = 0; i < namesToAlign.Count; i++)
-            {
-                namesToAlign[i] = namesToAlign[i].PadRight(maxLength + 1);
-            }
-
-            // Show formatted strings
-            foreach (string name in namesToAlign)
-            {
-                Console.WriteLine("Name: '{0}', after formattign.", name);
-            }
-
+        public void init()
+        {           
             // From WorkingWithStrings
-            UsefullFunctions.Formatter.RemoveWhiteSpaces(" this is a\nstring");
+            UsefullFunctions.Formatter.RemoveWhiteSpacesFromString(" this is a\nstring");
             
             UsefullTime.TimeWorks.IsYearLeapYear(2021);
 
-            ScriptsRandom.Script.Exit();
 
-            // Console.WriteLine("Press [Enter] to quit.");
-            // Console.ReadLine();
+            // ScriptsRandom.Script.Exit();
+            Console.WriteLine("Press [Enter] to quit.");
+            Console.ReadLine();
         }
+        
     }
 }

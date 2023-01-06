@@ -8,7 +8,7 @@ namespace UsefullFunctions
 {
     public class Formatter
     {
-        public static void RemoveWhiteSpaces(string raw)
+        public static void RemoveWhiteSpacesFromString(string raw)
         {
 
             Console.WriteLine("Removeing white Spaces ( before ): ' this is a\nstring'");
@@ -25,12 +25,60 @@ namespace UsefullFunctions
 
                 string before = s.Substring(0, offset);
                 string after = s.Substring(offset + 1);
-                Console.WriteLine("B: '{0}', A: '{1}'", before, after);
-
                 s = String.Concat(before, after);
             }
 
             Console.WriteLine("Removeing white Spaces ( after ): '{0}'", s);
+        }
+
+
+        public static void RemoveWhiteSpacesFromArray(string raw)
+        {
+            List<string> listStringNames = new List<string> {
+                " Sergio",
+                "Michael  ",
+                " Juango",
+                "Ewona ",
+                "Lorez"
+            };
+            // Display Names
+            Console.WriteLine("Sledushie imena imejut raznily dliny:");
+            
+            foreach (string name in listStringNames)
+            {
+                Console.WriteLine("Name: '{0}' before change", name);
+            }
+            Console.WriteLine();
+
+            List<string> namesToAlign = new List<string>();
+            for (int index = 0; index < listStringNames.Count; index++)
+            {
+                string trimedName = listStringNames[index].Trim();
+                namesToAlign.Add(trimedName);
+            }
+
+            // Get the longest name length (int)
+            int maxLength = 0;
+            foreach (string name in namesToAlign)
+            {
+                if (name.Length > maxLength)
+                {
+                    maxLength = name.Length;
+                }
+            }
+            Console.WriteLine("Longest name is '{0}' letters.", maxLength);
+
+            // Vyravnivaem vse stroki k max dline
+            for (int i = 0; i < namesToAlign.Count; i++)
+            {
+                namesToAlign[i] = namesToAlign[i].PadRight(maxLength + 1);
+            }
+
+            // Show formatted strings
+            foreach (string name in namesToAlign)
+            {
+                Console.WriteLine("Name: '{0}', after formattign.", name);
+            }
 
         }
     }
