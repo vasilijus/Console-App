@@ -12,7 +12,7 @@ namespace UsefullFunctions
         {
             for(;;)
             {
-                Console.WriteLine("Enter a floating number...");
+                Console.WriteLine("Enter a floating number...\nTo exit press [Enter]");
                 string numberInput = Console.ReadLine();
                 if (numberInput.Length == 0)
                 {
@@ -20,7 +20,7 @@ namespace UsefullFunctions
                 }
                 double number = Double.Parse(numberInput);
 
-                Console.WriteLine("Enter the format you prefer, seperated by whitespace: \n\t( C E F1 N0 0000000.00000 )");
+                Console.WriteLine("Enter the format you prefer, seperated by whitespace: \n\t( C E F1 N0 0000000.00000 0:00.0% )");
                 char[] seperator = {' ', '\t'};
                 string formatString = Console.ReadLine();
                 string[] formats = formatString.Split(seperator);
