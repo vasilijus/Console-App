@@ -1,4 +1,5 @@
 ﻿using System;
+
 // using UsefullFunctions;
 using System.Collections.Generic;
 // AlignOutput - viravnivanie mnozestvo strok, dlia uludshenia vneshnego vida v output
@@ -38,10 +39,9 @@ namespace AlignOutput
             
             UsefullTime.TimeWorks.IsYearLeapYear(2021);
 
+            Console.WriteLine(ScriptsRandom.JSON.GetNamesJSON());
 
-            // ScriptsRandom.Script.Exit();
-            Console.WriteLine("Press [Enter] to quit.");
-            Console.ReadLine();
+            ScriptsRandom.Script.Exit();
         }
         
     }
